@@ -7,5 +7,5 @@
   </parent>
   <artifactId>mm-manage</artifactId>
   <packaging>pom</packaging>
-  
+  <!-- test for update -->
 </project>
