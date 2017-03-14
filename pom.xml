@@ -4,4 +4,147 @@
   <artifactId>mm-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  
+  <!-- 自定义属性标签 -->
+  <properties>
+  	<junit.version>4.12</junit.version>
+  	<spring.version>4.3.3.RELEASE</spring.version>
+  </properties>
+  
+  <!-- 只定义依赖关系,不产生实际的依赖,该标签可以被子项目进行继承 -->
+  <dependencyManagement>
+  	<dependencies>
+  		<!-- spring 依赖的配置 -->
+  		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aop</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+	  	
+	  	<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aspects</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-instrument</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-instrument-tomcat</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jms</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-orm</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-oxm</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webmvc</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webmvc-portlet</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-websocket</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+  		<!-- spring 依赖配置END -->
+  	
+  		<dependency>
+  			<groupId>junit</groupId>
+  			<artifactId>junit</artifactId>
+  			<version>${junit.version}</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+  
+	<!-- maven的插件仓库配置,maven是基于插件的一个可插拔式项目构建工具 -->
+	  <!-- <pluginRepositories>
+	  	<pluginRepository>
+	            
+	  	</pluginRepository>
+	  </pluginRepositories> -->
+	  
+	  <!-- build里面的配置是maven执行构建时需要用到的 -->
+	  <build>
+	  	<!-- 插件管理,只是一个定义,不会产生具体的执行,同样的,该标签里面的定义元素可以被子项目继承 -->
+	  	<pluginManagement>
+	  		<plugins>
+	  			<plugin>
+	  				<groupId>org.apache.maven.plugins</groupId>
+	  				<artifactId>maven-compiler-plugin</artifactId>
+	  				<version>3.1</version>
+	  				<!-- 该插件执行时需要读取的配置 -->
+	  				<configuration>
+	  					<source>1.8</source>
+	  					<target>1.8</target>
+	  					<compilerVersion>1.8</compilerVersion>
+	  					<encoding>UTF-8</encoding>
+	  				</configuration>
+	  			</plugin>
+	  		</plugins>
+	  	</pluginManagement>
+	  </build>
 </project>
