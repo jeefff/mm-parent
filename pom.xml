@@ -4,4 +4,13 @@
   <artifactId>mm-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>com.vertical</groupId>
+    <artifactId>mm-common</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  
 </project>
